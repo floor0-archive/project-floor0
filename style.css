@@ -1,0 +1,69 @@
+<style>
+
+/* BACKGROUND */
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #0b1020, #000);
+    z-index: -2;
+}
+
+.bg::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
+    animation: move 80s linear infinite;
+}
+
+@keyframes move {
+    from { transform: translate(0,0); }
+    to { transform: translate(-400px,-400px); }
+}
+
+/* CENTER UI */
+.center {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    width: 900px;
+    height: 550px;
+
+    background: rgba(0,0,0,0.6);
+    border: 1px solid #222;
+    border-radius: 12px;
+
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 40px rgba(0,255,255,0.08);
+
+    overflow: hidden;
+}
+
+/* LEFT PANEL */
+.left {
+    width: 300px;
+    padding: 20px;
+    background: rgba(10,10,10,0.6);
+    border-right: 1px solid #222;
+}
+
+/* RIGHT PANEL */
+.right {
+    flex: 1;
+    padding: 20px;
+    background: rgba(5,5,5,0.5);
+}
+
+</style>
